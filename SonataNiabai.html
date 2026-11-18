@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SonataNiabai— Music para sa imong mood</title>
+<link rel="icon" href="jareds_friends.png">
+<link rel="stylesheet" href="SonataNiabai.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="side-top">
+      <div class="logo"><img src="jareds_friends.png" alt="SonataNiabai logo"><span>SonataNiabai</span></div>
+      <nav class="nav">
+        <a class="active" href="#" data-view="home"><span class="nav-icon">⌂</span>Home</a>
+        <a href="#" data-view="search"><span class="nav-icon">⌕</span>Search</a>
+      </nav>
+    </div>
+    <div class="library">
+      <div class="library-head"><span><span class="nav-icon">▤</span> Your Library</span><span>＋</span></div>
+      <div class="playlist-box"><strong>No playlist yet? Himo ta, bai!</strong><p>Add your songs diri, then enjoy bisan offline.</p><button class="pill" id="addMusicSide">＋ Add my songs</button></div>
+      <div class="side-link" id="likedLink">♡ &nbsp; Liked Songs</div>
+      <div class="side-link" id="allSongsLink">♫ &nbsp; All Songs</div>
+    </div>
+    <div class="side-footer">Legal&nbsp;&nbsp; Privacy&nbsp;&nbsp; Cookies<br>Gihimo para nimo 😤</div>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="topbar">
+      <div class="arrows"><button class="circle" title="Back" id="back">‹</button><button class="circle" title="Forward" id="forward">›</button></div>
+      <div class="search-wrap"><input id="searchInput" type="search" placeholder="What do you feel like listening to, bai?"></div>
+      <button class="profile" id="profileBtn">😤 Bai</button>
+    </div>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Para sa imoha, bai</div>
+        <h1>Music for every mood—panghilak, pangsayaw, or chill lang.</h1>
+        <p>Hit play and let the music take you. Walay ads, walay drama.</p>
+        <div class="hero-btns">
+          <button class="blue-btn" id="heroPlay">▶ &nbsp; Play music, bai</button>
+          <button class="ghost-btn" id="addMusic">＋ Add my songs</button>
+        </div>
+      </div>
+      <img class="hero-pic" src="jareds_friends.png" alt="Spotibai music artwork">
+    </section>
+
+    <div class="section-head"><h2 id="sectionTitle">Para nimo, bai</h2><small id="resultCount">0 TRACKS</small></div>
+    <div class="chips">
+      <button class="chip active" data-filter="All">All</button>
+      <button class="chip" data-filter="Pop">Pop</button>
+      <button class="chip" data-filter="Chill">Chill</button>
+      <button class="chip" data-filter="Focus">Focus</button>
+      <button class="chip" data-filter="Mine">My Songs</button>
+    </div>
+    <div class="cards" id="trackGrid"></div>
+  </main>
+
+  <footer class="player">
+    <div class="now-playing">
+      <img class="mini-cover" id="miniCover" src="jareds_friends.png" alt="">
+      <div class="track-text"><strong id="nowTitle">Choose a song, bai</strong><small id="nowArtist">Pili lang sa imong library</small></div>
+      <button class="control" id="likeBtn" title="Like song">♡</button>
+      <button class="control" id="lyricsBtn" title="Lyrics">📝</button>
+    </div>
+    <div class="player-center">
+      <div class="controls">
+        <button class="control" id="shuffleBtn" title="Shuffle">⤨</button>
+        <button class="control" id="prevBtn" title="Previous">|◀</button>
+        <button class="play-main" id="playBtn" title="Play">▶</button>
+        <button class="control" id="nextBtn" title="Next">▶|</button>
+        <button class="control" id="repeatBtn" title="Repeat">↻</button>
+      </div>
+      <div class="timeline"><span id="elapsed">0:00</span><input id="progress" type="range" min="0" max="100" value="0"><span id="duration">0:00</span></div>
+    </div>
+    <div class="volume"><span>🔊</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.7"></div>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+<input type="file" id="fileInput" accept="audio/*" multiple hidden>
+<audio id="audio" preload="metadata"></audio>
+<div class="lyrics-modal" id="lyricsModal">
+  <div class="lyrics-overlay" id="lyricsOverlay"></div>
+  <div class="lyrics-card">
+    <button class="lyrics-close" id="lyricsClose" aria-label="Close lyrics">✕</button>
+    <h3 id="lyricsTitle">Lyrics</h3>
+    <div id="lyricsBox">Select a song to see its lyrics.</div>
+  </div>
+</div>
+<script src="synced-lyrics.js"></script>
+<script src="SonataNiabai.js"></script>
+</body>
+</html>
