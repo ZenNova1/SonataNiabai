@@ -1,3 +1,5 @@
+# SonataNiabai is a plain static site (HTML/CSS/JS + media files) with no
+# framework, package manager, or build step. The repository root is published as-is.
 [build]
   publish = "."
 
