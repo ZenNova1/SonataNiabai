@@ -2,9 +2,9 @@
 # framework, package manager, or build step. The repository root is published as-is.
 [build]
   publish = "."
-  command = ""
 
-# The entry page is SonataNiabai.html (there is no index.html), so serve it at "/".
+# The app's entry page is SonataNiabai.html (there is no index.html),
+# so serve it at the site root instead of returning a 404.
 [[redirects]]
   from = "/"
   to = "/SonataNiabai.html"
