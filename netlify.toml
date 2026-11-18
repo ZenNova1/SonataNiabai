@@ -1,0 +1,9 @@
+[build]
+  publish = "."
+
+# The app's entry page is SonataNiabai.html (there is no index.html),
+# so serve it at the site root instead of returning a 404.
+[[redirects]]
+  from = "/"
+  to = "/SonataNiabai.html"
+  status = 200
